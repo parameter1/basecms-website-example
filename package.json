@@ -9,6 +9,7 @@
   "main": "index.js",
   "dependencies": {
     "@base-cms/env": "^1.37.0",
+    "@base-cms/marko-compiler": "^1.37.0",
     "@base-cms/marko-core": "^1.38.0",
     "@base-cms/marko-web": "^1.37.0",
     "@base-cms/web-cli": "^1.37.0"
@@ -18,11 +19,16 @@
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-vue": "^7.1.0",
-    "stylelint": "^13.7.2",
-    "stylelint-config-twbs-bootstrap": "^2.1.0"
+    "stylelint": "^10.1.0",
+    "stylelint-config-twbs-bootstrap": "^0.4.0"
   },
   "scripts": {
     "start": "./node_modules/.bin/basecms-website dev index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "basecms-website build",
+    "compile": "basecms-marko-compile compile --dir ./ --silent true",
+    "lint": "yarn lint:js && yarn lint:css",
+    "lint:js": "eslint --ext .js --ext .vue --max-warnings 5 ./",
+    "lint:css": "stylelint ./**/*.scss --max-warnings 5",
+    "test": "yarn lint && yarn compile && yarn build"
   }
 }
