@@ -7,6 +7,12 @@
   "license": "MIT",
   "private": true,
   "main": "index.js",
+  "dependencies": {
+    "@base-cms/env": "^1.37.0",
+    "@base-cms/marko-core": "^1.38.0",
+    "@base-cms/marko-web": "^1.37.0",
+    "@base-cms/web-cli": "^1.37.0"
+  },
   "devDependencies": {
     "eslint": "^7.11.0",
     "eslint-config-airbnb-base": "^14.2.0",
@@ -16,6 +22,7 @@
     "stylelint-config-twbs-bootstrap": "^2.1.0"
   },
   "scripts": {
+    "start": "./node_modules/.bin/basecms-website dev index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
