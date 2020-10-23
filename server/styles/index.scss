@@ -1,3 +1,3 @@
-body {
-  color: #333;
-}
+$theme-site-navbar-secondary-type: light;
+$theme-site-navbar-secondary-bg-color: #fff;
+@import "../../node_modules/@base-cms/marko-web-theme-default/scss/theme";

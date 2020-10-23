@@ -933,6 +933,23 @@
     moment "^2.24.0"
     moment-timezone "^0.5.26"
 
+"@base-cms/marko-web-icons@^1.37.0":
+  version "1.37.0"
+  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-icons/-/marko-web-icons-1.37.0.tgz#eda757d610836a7e8dc4219b5398488b19982146"
+  integrity sha512-4MuM4LZo0hlxOJcyu4xTEGqgdz2xbnIcvyc+O79BM8qeb+23GgtqWVfs15TsQSNT4w6YoJCBCJjb77+EkLi1xg==
+
+"@base-cms/marko-web-theme-default@^1.41.1":
+  version "1.41.1"
+  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-theme-default/-/marko-web-theme-default-1.41.1.tgz#04a78cf5f4b7ac58cac684a0f90e895a3fa86c55"
+  integrity sha512-IlLfhwz/qSUsWeDpc/6sMmFO+m4NdhZryEbHXX/3pLwUKbnm4QDpVAs5wFU81IaMlusm6ke/KO2niqbkr10mGw==
+  dependencies:
+    "@base-cms/marko-web-icons" "^1.37.0"
+    "@base-cms/object-path" "^1.37.0"
+    "@base-cms/utils" "^1.37.0"
+    bootstrap "4.3.1"
+    graphql "^14.5.4"
+    graphql-tag "^2.10.1"
+
 "@base-cms/marko-web@^1.37.0":
   version "1.37.0"
   resolved "https://registry.yarnpkg.com/@base-cms/marko-web/-/marko-web-1.37.0.tgz#d4e3417c0954aa89e7892505bca72bfe45709318"
@@ -1987,6 +2004,11 @@ boolbase@^1.0.0, boolbase@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
   integrity sha1-aN/1++YMUes3cl6p4+0xDcwed24=
+
+bootstrap@4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.3.1.tgz#280ca8f610504d99d7b6b4bfc4b68cec601704ac"
+  integrity sha512-rXqOmH1VilAt2DyPzluTi2blhk17bO7ef+zLLPlWvG494pDxcM234pJ8wTc/6R40UWizAIIMgxjvxZg5kmsbag==
 
 bowser@2.9.0:
   version "2.9.0"

@@ -1,10 +1,22 @@
 $ const { req } = out.global
 
-<marko-web-document>
+<marko-web-default-page-layout>
   <@above-container>
-    <h1>Hello, World!</h1>
-    <blockquote>
-      From: ${req.hostname}
-    </blockquote>
+    <default-theme-site-header />
+    <default-theme-site-menu />
   </@above-container>
-</marko-web-document>
+  <@page>
+    <marko-web-page-wrapper class="mb-block">
+      <@section>
+        <div class="row">
+          <div class="col">
+            <h1>Hello, World!</h1>
+            <blockquote>
+              From: ${req.hostname}
+            </blockquote>
+          </div>
+        </div>
+      </@section>
+    </marko-web-page-wrapper>
+  </@page>
+</marko-web-default-page-layout>
