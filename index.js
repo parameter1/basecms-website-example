@@ -1,3 +1,4 @@
+require('./env')();
 
 const { startServer } = require('@base-cms/marko-web');
 const template = require('./server/templates/home-page');
