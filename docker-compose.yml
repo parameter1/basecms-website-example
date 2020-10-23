@@ -1,0 +1,61 @@
+version: '3.7'
+
+x-node-defaults: &node
+  tty: true
+  init: true
+  image: node:10.15
+  entrypoint: ["node"]
+  working_dir: /root
+  restart: always
+  volumes:
+    - ./:/root:cached
+    - ./node_modules:/root/node_modules:delegated
+    - yarn-cache:/.yarn-cache
+
+x-env-defaults: &env
+  NODE_ENV: development
+  YARN_CACHE_FOLDER: /.yarn-cache
+
+x-env-tauron: &env-tauron
+  GRAPHQL_URI: ${GRAPHQL_URI-https://tauron.graphql.base.parameter1.com}
+  OEMBED_URI: ${OEMBED_URI-https://tauron.oembed.base.parameter1.com}
+  RSS_URI: ${RSS_URI-https://tauron.rss.base.parameter1.com}
+  SITEMAPS_URI: ${SITEMAPS_URI-https://tauron.sitemaps.base.parameter1.com}
+
+x-site-command: &site-cmd
+  entrypoint: ["node_modules/.bin/basecms-website"]
+  command: ["dev", "index.js"]
+
+volumes:
+  yarn-cache: {}
+
+services:
+  terminal:
+    <<: *node
+    working_dir: /root
+    entrypoint: ["/bin/bash"]
+    environment:
+      <<: *env
+
+  yarn:
+    <<: *node
+    working_dir: /root
+    entrypoint: ["yarn"]
+    environment:
+      <<: *env
+
+  example.com:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root
+    environment:
+      <<: *env
+      <<: *env-tauron
+      PORT: 80
+      EXPOSED_PORT: 4008
+      LIVERELOAD_PORT: 14008
+      TENANT_KEY: p1_sandbox
+      SITE_ID: 5ed294c6c13a4626008b4568
+    ports:
+      - "4008:80"
+      - "14008:14008"
