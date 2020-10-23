@@ -4,6 +4,7 @@ module.exports = {
       { href: '/section-1', label: 'Section 1' },
       { href: '/section-2', label: 'Section 2' },
       { href: '/section-3', label: 'Section 3' },
+      { href: 'https://google.com', label: 'Google', target: '_blank' },
     ],
   },
   secondary: {
